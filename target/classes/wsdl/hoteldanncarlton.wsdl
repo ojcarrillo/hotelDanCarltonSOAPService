@@ -1,0 +1,224 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/demo/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="hotelDannCarltonService"
+	targetNamespace="http://www.example.org/demo/">
+	<wsdl:types>
+		<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.example.org/demo/"
+			elementFormDefault="unqualified" version="1.0">
+			<xsd:element name="cancelarReserva">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="idReserva"
+							type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="cancelarReservaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="respuesta"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="estado"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="fechaReserva"
+							type="xsd:dateTime" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerReserva">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="idReserva"
+							type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="obtenerReservaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="nroReserva"
+							type="xsd:string"></xsd:element>
+						<xsd:element minOccurs="0" name="habitacion"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="hotel"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="fechaReserva"
+							type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="fechaIngreso"
+							type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="nroHabitaciones"
+							type="xsd:integer" />
+						<xsd:element minOccurs="0" name="tipoHabitacion"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="cantidadPersonas"
+							type="xsd:integer" />
+						<xsd:element minOccurs="0" name="estadoReserva"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="residentes">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element minOccurs="1" maxOccurs="unbounded" name="persona">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="nombre"
+													type="xsd:string" />
+												<xsd:element minOccurs="0" name="apellido"
+													type="xsd:string" />
+												<xsd:element minOccurs="0" name="genero"
+													type="xsd:string" />
+												<xsd:element minOccurs="0" name="titular"
+													type="xsd:boolean" />
+												<xsd:element minOccurs="0"
+													name="nroIdentificacion" type="xsd:string" />
+												<xsd:element minOccurs="0"
+													name="tipoIdentificacion" type="xsd:string" />
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="realizarReserva">
+			<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="nroReserva"
+							type="xsd:string"></xsd:element>
+						<xsd:element minOccurs="0" name="habitacion"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="hotel"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="fechaReserva"
+							type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="fechaIngreso"
+							type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="nroHabitaciones"
+							type="xsd:integer" />
+						<xsd:element minOccurs="0" name="tipoHabitacion"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="cantidadPersonas"
+							type="xsd:integer" />
+						<xsd:element minOccurs="0" name="estadoReserva"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="residentes">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element minOccurs="1" maxOccurs="unbounded" name="persona">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="nombre"
+													type="xsd:string" />
+												<xsd:element minOccurs="0" name="apellido"
+													type="xsd:string" />
+												<xsd:element minOccurs="0" name="genero"
+													type="xsd:string" />
+												<xsd:element minOccurs="0" name="titular"
+													type="xsd:string" />
+												<xsd:element minOccurs="0"
+													name="nroIdentificacion" type="xsd:string" />
+												<xsd:element minOccurs="0"
+													name="tipoIdentificacion" type="xsd:string" />
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>				
+			</xsd:element>
+			<xsd:element name="realizarReservaResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="respuesta"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="estado"
+							type="xsd:string" />
+						<xsd:element minOccurs="0" name="fechaReserva"
+							type="xsd:dateTime" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="cancelarReservaRequest">
+		<wsdl:part element="tns:cancelarReserva" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="cancelarReservaResponse">
+		<wsdl:part element="tns:cancelarReservaResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="obtenerReservaRequest">
+		<wsdl:part name="parameters" element="tns:obtenerReserva" />
+	</wsdl:message>
+	<wsdl:message name="obtenerReservaResponse">
+		<wsdl:part name="parameters"
+			element="tns:obtenerReservaResponse" />
+	</wsdl:message>
+	<wsdl:message name="realizarReservaRequest">
+		<wsdl:part name="parameters" element="tns:realizarReserva"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="realizarReservaResponse">
+		<wsdl:part name="parameters"
+			element="tns:realizarReservaResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="HotelDannCarltonSystemServices">
+		<wsdl:operation name="cancelarReserva">
+			<wsdl:input message="tns:cancelarReservaRequest" />
+			<wsdl:output message="tns:cancelarReservaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="obtenerReserva">
+			<wsdl:input message="tns:obtenerReservaRequest" />
+			<wsdl:output message="tns:obtenerReservaResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="realizarReserva">
+			<wsdl:input message="tns:realizarReservaRequest"></wsdl:input>
+			<wsdl:output message="tns:realizarReservaResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="HotelDannCarltonServicesEndpoint"
+		type="tns:HotelDannCarltonSystemServices">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="cancelarReserva">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="cancelarReservaRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="cancelarReservaResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerReserva">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="obtenerReservaRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="obtenerReservaResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="realizarReserva">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="realizarReservaRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="realizarReservaResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="HotelDannCarltonService">
+		<wsdl:port binding="tns:HotelDannCarltonServicesEndpoint"
+			name="HotelDannCarltonServicesEndpoint">
+			<soap:address
+				location="http://localhost:8181/cxf/services/HotelDannCarltonService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
