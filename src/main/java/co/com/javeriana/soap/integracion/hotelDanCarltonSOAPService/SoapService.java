@@ -3,10 +3,10 @@ package co.com.javeriana.soap.integracion.hotelDanCarltonSOAPService;
 import java.io.IOException;
 
 import org.apache.camel.Exchange;
-import org.example.demo.CancelarReserva;
-import org.example.demo.ObtenerReserva;
-import org.example.demo.RealizarReserva;
-import org.example.demo.RealizarReservaResponse;
+import org.hoteldanncarlton.demo.CancelarReserva;
+import org.hoteldanncarlton.demo.ObtenerReserva;
+import org.hoteldanncarlton.demo.RealizarReserva;
+import org.hoteldanncarlton.demo.RealizarReservaResponse;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;

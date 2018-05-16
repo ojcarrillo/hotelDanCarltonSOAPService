@@ -19,8 +19,8 @@ http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/came
 	<cxf:cxfEndpoint id="hotelDannCarltonSoap"
 		address="/services/hoteldanncarlton" endpointName="a:HotelDannCarltonServicesEndpoint"
 		serviceName="a:HotelDannCarltonService" wsdlURL="wsdl/hoteldanncarlton.wsdl"
-		serviceClass="org.example.demo.HotelDannCarltonSystemServices"
-		xmlns:a="http://www.example.org/demo/">
+		serviceClass="org.hoteldanncarlton.demo.HotelDannCarltonSystemServices"
+		xmlns:a="http://www.hoteldanncarlton.org/demo/">
 		<cxf:properties>
 			<entry key="dataFormat" value="PAYLOAD" />
 		</cxf:properties>
@@ -30,12 +30,12 @@ http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/came
 		xmlns="http://camel.apache.org/schema/spring">
 	
 		<camel:dataFormats>
-			<camel:jaxb id="cancelarPayload" contextPath="org.example.demo"
-				partClass="org.example.demo.CancelarReserva" />
-			<camel:jaxb id="obtenerPayload" contextPath="org.example.demo"
-				partClass="org.example.demo.ObtenerReserva" />
-			<camel:jaxb id="realizarPayload" contextPath="org.example.demo"
-				partClass="org.example.demo.RealizarReserva" />
+			<camel:jaxb id="cancelarPayload" contextPath="org.hoteldanncarlton.demo"
+				partClass="org.hoteldanncarlton.demo.CancelarReserva" />
+			<camel:jaxb id="obtenerPayload" contextPath="org.hoteldanncarlton.demo"
+				partClass="org.hoteldanncarlton.demo.ObtenerReserva" />
+			<camel:jaxb id="realizarPayload" contextPath="org.hoteldanncarlton.demo"
+				partClass="org.hoteldanncarlton.demo.RealizarReserva" />
 		</camel:dataFormats>
 		
 		<camel:route id="soap-integration">
