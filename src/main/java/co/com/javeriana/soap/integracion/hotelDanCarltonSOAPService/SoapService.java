@@ -12,14 +12,15 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import co.com.javeriana.soap.integracion.rest.Constantes;
 import co.com.javeriana.soap.integracion.rest.RestInvoker;
 
 @Component
 public class SoapService {
-
+	
 	public void cancelarReserva(final Exchange exchange) {
 		CancelarReserva datos = exchange.getIn().getBody(CancelarReserva.class);
-		String serviceURL = "http://35.203.93.92:9092/cancelarReserva/" + datos.getIdReserva();
+		String serviceURL = Constantes.URL_REST_SERVICE + "cancelarReserva/" + datos.getIdReserva();
 		String method = "POST";
 		String accept = "application/xml";
 		String response = RestInvoker.invokeService(serviceURL, method, accept, datos.getIdReserva());
@@ -28,7 +29,7 @@ public class SoapService {
 
 	public void obtenerReserva(final Exchange exchange) {
 		ObtenerReserva datos = exchange.getIn().getBody(ObtenerReserva.class);
-		String serviceURL = "http://35.203.93.92:9092/obtenerReserva/" + datos.getIdReserva();
+		String serviceURL =  Constantes.URL_REST_SERVICE + "/obtenerReserva/" + datos.getIdReserva();
 		String method = "GET";
 		String accept = "application/xml";
 		String response = RestInvoker.invokeService(serviceURL, method, accept, datos.getIdReserva());
@@ -38,7 +39,7 @@ public class SoapService {
 	public void realizarReserva(final Exchange exchange) {
 		try {
 			RealizarReserva datos = exchange.getIn().getBody(RealizarReserva.class);
-			String serviceURL = "http://35.203.93.92:9092/realizarReserva/";
+			String serviceURL =  Constantes.URL_REST_SERVICE + "realizarReserva/";
 			String method = "POST";
 			String accept = "application/json";
 			ObjectMapper mapper = new ObjectMapper();

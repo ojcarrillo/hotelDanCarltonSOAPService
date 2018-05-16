@@ -8,6 +8,7 @@ org\hoteldanncarlton\demo\RealizarReserva$Residentes.class
 org\hoteldanncarlton\demo\package-info.class
 org\hoteldanncarlton\demo\RealizarReserva.class
 org\hoteldanncarlton\demo\RealizarReserva$Residentes$Persona.class
+co\com\javeriana\soap\integracion\rest\Constantes.class
 co\com\javeriana\soap\integracion\hotelDanCarltonSOAPService\SoapService.class
 co\com\javeriana\soap\integracion\rest\RestInvoker.class
 org\hoteldanncarlton\demo\HotelDannCarltonSystemServices.class
